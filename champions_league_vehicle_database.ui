@@ -1,0 +1,263 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.2">
+  <object class="tk.Toplevel" id="main_window">
+    <property name="geometry">640x640</property>
+    <property name="height">200</property>
+    <property name="minsize">600|400</property>
+    <property name="title" translatable="yes">DDRL Champions League vehicle database</property>
+    <property name="width">200</property>
+    <containerlayout manager="grid">
+      <property type="col" id="0" name="weight">1</property>
+      <property type="row" id="5" name="weight">1</property>
+    </containerlayout>
+    <child>
+      <object class="ttk.Frame" id="title_description">
+        <property name="height">200</property>
+        <property name="padding">10 10 0 30</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">0</property>
+          <property name="sticky">w</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="title">
+            <property name="font">{Arial} 20 {bold}</property>
+            <property name="text" translatable="yes">Damon Die-Cast Racing League</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="description">
+            <property name="font">{Arial} 16 {}</property>
+            <property name="text" translatable="yes">Champions League vehicle database</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Separator" id="separator_1">
+        <property name="orient">horizontal</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="pady">0 10</property>
+          <property name="row">1</property>
+          <property name="sticky">ew</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="category_search_frame">
+        <property name="height">200</property>
+        <property name="padding">10 0 0 0</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="pady">0 10</property>
+          <property name="row">2</property>
+          <property name="sticky">nsew</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="category_search_label">
+            <property name="font">{Arial} 14 {italic}</property>
+            <property name="text" translatable="yes">Search by category:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="pady">0 5</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="team_label">
+            <property name="font">{Arial} 14 {bold}</property>
+            <property name="text" translatable="yes">Team:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">0 5</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Combobox" id="team_combobox">
+            <property name="state">readonly</property>
+            <property name="values">All Damon Ian Benny Peter</property>
+            <property name="width">10</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">0 15</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="season_label">
+            <property name="font">{Arial} 14 {bold}</property>
+            <property name="text" translatable="yes">Season:</property>
+            <layout manager="grid">
+              <property name="column">2</property>
+              <property name="padx">0 5</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Combobox" id="season_combobox">
+            <property name="state">readonly</property>
+            <property name="values">All 1 2 3 4 5 6 7 8 9</property>
+            <property name="width">5</property>
+            <layout manager="grid">
+              <property name="column">3</property>
+              <property name="padx">0 15</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="place_label">
+            <property name="font">{Arial} 14 {bold}</property>
+            <property name="text" translatable="yes">Place:</property>
+            <layout manager="grid">
+              <property name="column">4</property>
+              <property name="padx">0 5</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Combobox" id="place_combobox">
+            <property name="state">readonly</property>
+            <property name="values">All 1st 2nd 3rd 4th 5th 6th 7th 8th 9th 10th 11th 12th</property>
+            <property name="width">5</property>
+            <layout manager="grid">
+              <property name="column">5</property>
+              <property name="padx">0 25</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="category_search_button">
+            <property name="command" type="command" cbtype="simple">get_category_search</property>
+            <property name="text" translatable="yes">Search</property>
+            <layout manager="grid">
+              <property name="column">6</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Separator" id="separator_2">
+        <property name="orient">horizontal</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="pady">0 10</property>
+          <property name="row">3</property>
+          <property name="sticky">ew</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="vehicle_search_frame">
+        <property name="height">200</property>
+        <property name="padding">10 0 0 0</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="pady">0 10</property>
+          <property name="row">4</property>
+          <property name="sticky">w</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="vehicle_search_label">
+            <property name="font">{Arial} 14 {italic}</property>
+            <property name="text" translatable="yes">Search by vehicle:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="pady">0 5</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="vehicle_name_label">
+            <property name="font">{Arial} 14 {bold}</property>
+            <property name="text" translatable="yes">Vehicle name:</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">0 5</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="vehicle_name_entry">
+            <bind sequence="&lt;KeyPress-Return&gt;" handler="get_vehicle_search_on_keypress" add="" />
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">0 25</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="vehicle_search_button">
+            <property name="command" type="command" cbtype="simple">get_vehicle_search_on_button_click</property>
+            <property name="text" translatable="yes">Search</property>
+            <layout manager="grid">
+              <property name="column">3</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="pygubu.builder.widgets.scrollbarhelper" id="scrollbarhelper">
+        <property name="scrolltype">both</property>
+        <property name="usemousewheel">false</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">5</property>
+          <property name="sticky">nsew</property>
+        </layout>
+        <child>
+          <object class="ttk.Treeview" id="data_tree">
+            <property name="selectmode">extended</property>
+            <property name="show">headings</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="sticky">nsew</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
