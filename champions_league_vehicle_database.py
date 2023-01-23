@@ -1,7 +1,7 @@
 # ****************************************************************************
 # Author:           Peter Jungers
 # Program name:     Champions League vehicle database
-# Version:	        1.0
+# Version:          1.0
 # Date:             06/10/2022
 # Description:      A searchable database of all Damon Die-Cast Racing League
 #                   (DDRL) Champions League vehicles
